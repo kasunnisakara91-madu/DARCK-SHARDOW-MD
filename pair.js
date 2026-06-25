@@ -1144,7 +1144,7 @@ function setupCommandHandlers(socket, number) {
       }
       
       switch(command) {
-       case '.menu':
+       case '.pakaya':
     await sock.sendMessage(from, {
       text: `*🧬 BOT IDENTITY 🧬*
 ╔══════════════════════════════╗
@@ -1319,7 +1319,7 @@ function setupCommandHandlers(socket, number) {
 
             // Prepare message
             const txt = `
-🔗 *DCT MINI BOT 𝗨ʀʟ 𝗖ᴏɴᴠᴇɴᴛᴇʀ*
+🔗 *DARCK SHARDOW 𝗨ʀʟ 𝗖ᴏɴᴠᴇɴᴛᴇʀ*
 
 📂 *ᴛʏᴘᴇ:* ${typeStr}
 📊 *ꜱɪᴢᴇ:* ${fileSize}
@@ -1556,7 +1556,7 @@ case 'ytmp3':
   }
   break;
           }
-          case 'menu1': {
+          case 'menu': {
   try { await socket.sendMessage(sender, { react: { text: "☠️", key: msg.key } }); } catch(e){}
 
   try {
@@ -1571,7 +1571,7 @@ case 'ytmp3':
     try { if (number && typeof loadUserConfigFromMongo === 'function') userCfg = await loadUserConfigFromMongo((number || '').replace(/[^0-9]/g, '')) || {}; }
     catch(e){ console.warn('menu: failed to load config', e); userCfg = {}; }
 
-    const title = userCfg.botName || 'DCT MINI BOT';
+    const title = userCfg.botName || 'DARCK SHARDOW';
 
     // 🔹 Fake contact for Meta AI mention
     const shonux = {
@@ -1597,7 +1597,7 @@ END:VCARD`
 
     const text = `
 ╭───❏ *BOT STATUS* ❏
-│ ☠️ *Bot Name*: ${title}
+│ ✅ *Bot Name*: ${title}
 │ 👑 *Owner*: ${config.OWNER_NAME || 'KEZU,DULA DEV,MADUSANKA'}
 │ 🏷️ *Version*: ${config.BOT_VERSION || '0.0001+'}
 │ ☁️ *Platform*: ${process.env.PLATFORM || 'Senasuru✨'}
@@ -1627,7 +1627,7 @@ END:VCARD`
 │ 🤖 *BOT INFO*
 │ ${config.PREFIX}alive
 │
-> © ${config.BOT_FOOTER || 'DCT MINI BOT'}
+> © ${config.BOT_FOOTER || 'DARCK SHARDOW'}
 `.trim();
 
     const buttons = [
@@ -1638,7 +1638,7 @@ END:VCARD`
       { buttonId: `${config.PREFIX}owner`, buttonText: { displayText: "👑 OWNER" }, type: 1 }
     ];
 
-    const defaultImg = 'https://files.catbox.moe/k8zmqd.jpeg';
+    const defaultImg = 'https://i.ibb.co/fV79ZwSp/915ebad2c8fc.jpg';
     const useLogo = userCfg.logo || defaultImg;
 
     // build image payload (url or buffer)
@@ -1651,7 +1651,7 @@ END:VCARD`
     await socket.sendMessage(sender, {
       image: imagePayload,
       caption: text,
-      footer: "DCT MINI BOT",
+      footer: "DARCK SHARDOW",
       buttons,
       headerType: 4
     }, { quoted: shonux });
